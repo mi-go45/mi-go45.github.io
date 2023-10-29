@@ -52,4 +52,4 @@ function typewriter(elementId, words, wordPause,emptyPause){
     
 }
 
-typewriter("typewrite",["history","astronauts","the future"],55,5);
+typewriter("typewrite",["blogbooksの筆者","なんちゃってプログラマー","ふぉっふぉっふぉっ創始者(?)"],55,5);
