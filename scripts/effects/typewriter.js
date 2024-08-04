@@ -19,37 +19,5 @@ function typewriter(elementId, words, wordPause,emptyPause){
         if(showCursor && anim[i] != "|")anim[i] += '|'
     }
     */
-    let currentImage = "";
-    let ind = 0;
-    let blurbImage = document.getElementById("blurbImage");
-    setInterval(function(){
-        
-        //swapping blurb image when text changes
-        if(anim[ind] == "h" && currentImage != "res/launch.png"){
-            //fadeSwapImg("blurbImage","res/launch.png",FADESPEED*2);
-            blurbImage.setAttribute("src","res/launch.png")
-            currentImage = "res/launch.png";
-            fade("blurbImage",FADESPEED*2,"in");
-        }
-        else if(anim[ind] == "a" && currentImage != "res/aldrin.png"){
-            blurbImage.setAttribute("src","res/aldrin.png")
-            currentImage = "res/aldrin.png";
-            fade("blurbImage",FADESPEED*2,"in");
-        }
-        
-        else if(anim[ind] == "t" && currentImage != "res/rover.png"){
-            blurbImage.setAttribute("src","res/rover.png")
-            currentImage = "res/rover.png";
-            fade("blurbImage",FADESPEED*2,"in");
-        }
-        
-        if(words.includes(anim[ind-1]) && words.includes(anim[ind]) == false)fade("blurbImage",FADESPEED*2,"out");;
-        
-        document.getElementById(elementId).textContent = anim[ind];
-        ind++;
-        if(ind >= anim.length)ind = 0;
-    },100)
-    
-}
 
 typewriter("typewrite",["blogbooksの記者","なんちゃってプログラマー","ふぉっふぉっふぉっ創始者(?)"],55,5);
