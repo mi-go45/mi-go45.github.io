@@ -1,164 +1,174 @@
 <!DOCTYPE html>
-<html lang="en" style="background: linear-gradient(black,rgb(27 20 56));background-attachment: fixed; background-color: black;">
-    <head>
-        
-        <meta charset="UTF-8">
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1"/>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-        <link rel="preload" as="image" href="res/aldrin.png">
-        <link rel="preload" as="image" href="res/launch.png">
-        <link rel="preload" as="image" href="res/rover.png">
-        
-        <link rel="preload" as="image" href="res/spacecenter.png">
-        <link rel="preload" as="image" href="res/zerog.png">
-        <link rel="preload" as="image" href="res/fitness.png">
-        <link rel="preload" as="image" href="res/recovery.png">
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css?family=Poppins:400,600,800" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miggo45 | Portfolio & Hub</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --accent-color: #38bdf8;
+            --sub-text: #94a3b8;
+        }
 
-        <link id="mainStylesheet" rel="stylesheet" href="styles/main.css">
-        <link rel="icon" href="res/favicon.png">
-        <title>Home | ミーゴについて</title>
-         
-    </head>
-    
-    <body>
-        
-        
-        <div id="stickyHeader">
-            
-            <div>
-                <p id="headerLogo" onclick="window.open('index.html','_self')"><img src="res/logowhite.png">Mi-go45</p>
-            </div>
-            
-            <div style="display: grid;align-items: center">
-                <div>
-                    <p class="pageLink" onclick="window.open('technologies.html','_self')">歴史</p>
-                    <p class="pageLink" onclick="window.open('pricing.html','_self')">プラン</p>
-                    <p class="pageLink" onclick="window.open('sources.html','_self')">Sources</p>
-                </div>
-            </div>
-        </div>
-        
-        
-        <!-- mobile version of the header-->
-        <div id="mobileNavbar">
-            <img src="res/logowhite.png" onclick="window.open('index.html','_self')">
-            <img id="burgerIcon" src="res/menu.svg" onclick="toggleBurgerMenu()">
-        </div>
-        
-        <div id="burgerPopup">
-            <p class="pageLink" onclick="window.open('technologies.html','_self')">歴史</p>
-            <p class="pageLink" onclick="window.open('pricing.html','_self')">プラン</p>
-            <p class="pageLink" onclick="window.open('sources.html','_self')">Sources</p>
-        </div>
-        
-        
-        <br><br>
-        
-        
-        
-        
-        
-        <div id="desktopHeader">
-            <h1 id="sloganHeader" class="bigHeader"><span class="blueGradientText">ミーゴについての</span><br><span class="blueGradientText">ページ</span></h1>
-            <h2 id="sloganSub">どうもこんにちは。私は <span style="font-weight: 600">ミーゴ</span> です。</h2>
-        </div>
-        
-        <img id="parallaxEarth" src="res/bigearth.png">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-        
-        <!--Mobile version of the parallax earth scene-->
-        <div id="mobileHeader">
-            <br><br><br>
-            <h1><span class="blueGradientText">ミーゴについての</span><br><span class="blueGradientText">ページ</span></h1>
-            <p>どうもこんにちは。私は<span style="font-weight: 600">ミーゴ</span>です。</p>
-            <img id="mobileEarth" src="res/smallearth.png">
-        </div>
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-    
-        <div class="bigGap"></div>
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
 
+        .profile-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            border: 1px solid #334155;
+        }
 
-        <!-- Basic information section explaining the company-->
-        <div class="imageBlurb grayBox">
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
+        }
 
-            <div>
-                <img id="blurbImage">
+        h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
 
-            </div>
+        .handle {
+            color: var(--accent-color);
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
 
-            <div class="infoSection">
-                <h1 class="subHeader">私は <span id="typewrite" style="color:rgb(160 100 255)"></span></h1>
-                <p>ふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっ！ふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっ！ふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっ！ふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっ！ふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっ！ふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっ！ふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっ！ふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっふぉっ！blogbooksの記者。プログラム初心者未満。ふぉっふぉっふぉっの生みの親。 もしよければ、 <span onclick="window.open('pricing.html','_self')" style="font-weight:600;cursor: pointer" class="blueGradientText">ふぉっふぉっふぉっvipメンバー</span>に参加してください！</p>
-            </div>
+        .bio {
+            color: var(--sub-text);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
 
-        </div>
+        .links-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--sub-text);
+            margin-bottom: 12px;
+            text-align: left;
+        }
 
-        <div class="bigGap"></div>
-        
+        .link-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-        
-        <!--preload images-->
-        <div style="display: none">
-            <img src="res/aldrin.png">
-            <img src="res/launch.png">
-            <img src="res/rover.png">
-            
-            <img src="res/spacecenter.png">
-            <img src="res/zerog.png">
-            <img src="res/fitness.png">
-            <img src="res/recovery.png">
-        </div>
-        
-        
-        <h1 class="subHeader" style="text-align:center">Mi-go's Contents</h1>
-        <h2 class="gradientSub"><span class="blueGradientText">けっこうミーゴいろいろやってます。</span></h2>
-        <br><br><br>
-        
-        <div id="roadmapSlide" class="grayBox">
-            <div id="slideContent">
-                <img id="rmSlideImage">
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #334155;
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .link-btn:hover {
+            background-color: var(--accent-color);
+            color: #0f172a;
+            transform: translateY(-2px);
+        }
+
+        .badge {
+            font-size: 11px;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+
+        footer {
+            margin-top: 24px;
+            font-size: 12px;
+            color: var(--sub-text);
+        }
+        .avatar-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* 丸く切り抜く場合（四角のままならこの行を削除） */
+    object-fit: cover;
+    margin: 0 auto 20px;
+    display: block;
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <!-- アイコン（文字または画像に置き換え可能） -->
+            <img src="icon.png" alt="Miggo45 Icon" class="avatar-img">
+
+            <h1>Miggo45</h1>
+            <div class="handle">@miggo45</div>
+
+            <p class="bio">
+              
+                自宅サーバーでWebサービスやインフラを構築・運用中。
+                ※このページの作成にはGeminiを使用しています
+            </p>
+
+            <div class="links-title">Services & Links</div>
+
+            <div class="link-list">
+                <!-- 自宅サーバー内の他サービスへのリンク -->
+                <a href="https://miggo45.ie-t.net/" class="link-btn">
+                    <span>MPS</span>
+                    <span class="badge">miggo45.ie-t.net</span>
+                </a>
                 
-                <div style="display:flex;justify-content: space-between;">
-                    <button class="slideButton" style="margin-left: 0px" onclick="prevRmSlide()"><img class="slideButtonImg" src="res/leftarrow.svg"></button>
-                    <div>
-                        <h3 id="rmSlideHeader"></h3>
-                        <p id="rmSlideSub"></p>
-                    </div>
-                    <button class="slideButton" style="margin-right: 0px" onclick="nextRmSlide()"><img class="slideButtonImg" src="res/rightarrow.svg"></button>
-                </div>
-                
+                <!-- GitHubやXなど（必要に応じて書き換えてください） -->
+                <a href="https://github.com/mi-go45" target="_blank" class="link-btn">
+                    <span>GitHub</span>
+                    <span class="badge">External</span>
+                </a>
             </div>
-            
-            <div id="rmDotContainer"><span class="rmSideDot"></span></div>
-            
-        </div>
 
-        
-        <br><br><br>
-        
-          
-        <div id="footer"><p>Mi-go's Discord server →</p><img onclick="window.open('https://discord.gg/5XeKAnJaCT')" src="res/github-mark-white.png"></div>
-        <br>
-	   
-        <script src="scripts/effects/fade.js"></script>
-        <script src="scripts/effects/circlepath.js"></script>
-        <script src="scripts/effects/typewriter.js"></script>
-        <script src="scripts/effects/parallax.js"></script>
-        
-        <script src="scripts/page-system/page-system.js"></script>
-        
-        <script src="scripts/roadmap/roadmap.js"></script>
-        
-        <script src="scripts/mobile/mobile.js"></script>
-   
-        
-    </body>
-    
+            <footer>
+                &copy; 2026 Miggo45. Hosted on Private Raspberry Pi.
+            </footer>
+        </div>
+    </div>
+</body>
 </html>
